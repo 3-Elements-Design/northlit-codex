@@ -9,7 +9,7 @@
       "description": "Northlit's MCP server plus northlit-* skills — briefs to boards, prototypes, video, and published URLs.",
       "source": {
         "source": "local",
-        "path": "./"
+        "path": "./plugins/northlit"
       },
       "policy": {
         "installation": "AVAILABLE",
