@@ -1,0 +1,21 @@
+{
+  "name": "northlit",
+  "interface": {
+    "displayName": "Northlit"
+  },
+  "plugins": [
+    {
+      "name": "northlit",
+      "description": "Northlit's MCP server plus northlit-* skills — briefs to boards, prototypes, video, and published URLs.",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

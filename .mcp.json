@@ -1,0 +1,12 @@
+{
+  "mcp_servers": {
+    "northlit": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://northlit.ai/api/mcp"
+      ]
+    }
+  }
+}

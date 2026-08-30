@@ -1,0 +1,31 @@
+{
+  "name": "northlit",
+  "version": "0.1.0",
+  "description": "AI design studio: explore a brief as a board of direction mocks, build working HTML prototypes, generate video, publish — from Codex.",
+  "author": {
+    "name": "Northlit",
+    "email": "support@northlit.ai",
+    "url": "https://northlit.ai"
+  },
+  "homepage": "https://northlit.ai",
+  "repository": "https://github.com/3-Elements-Design/northlit-codex",
+  "license": "MIT",
+  "keywords": [
+    "design",
+    "mcp",
+    "images",
+    "prototypes",
+    "video",
+    "branding"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Northlit",
+    "shortDescription": "Design boards, prototypes, and video from your agent",
+    "developerName": "Northlit",
+    "category": "Productivity",
+    "websiteURL": "https://northlit.ai",
+    "privacyPolicyURL": "https://northlit.ai/privacy"
+  }
+}
