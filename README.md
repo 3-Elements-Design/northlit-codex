@@ -49,7 +49,7 @@ codex mcp login northlit
 
 ## What the server exposes
 
-56 tools, all acting as the signed-in user. Tools marked billable
+58 tools, all acting as the signed-in user. Tools marked billable
 spend the account's credits — the agent is told the balance up front (`whoami`)
 and refusals carry an upgrade path instead of failing silently.
 
@@ -119,6 +119,8 @@ and refusals carry an upgrade path instead of failing silently.
 - `list_skills` — Catalog of design skills (name, description, when to use).
 - `get_skill` — Full markdown body of one skill.
 - `semantic_search` — Vector search across skills and run artifacts.
+- `search_inspiration` — Vibe-search the curated inspiration gallery — free.
+- `get_inspiration` — One inspiration item in full — prompt, image, palette; adapt via create_exploration.
 
 ### Design systems & exports
 
