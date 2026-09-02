@@ -64,16 +64,11 @@ skills also trigger implicitly.
 
 ## How the server connects
 
-The plugin bundles Northlit's MCP server through
-[`mcp-remote`](https://www.npmjs.com/package/mcp-remote) (the standard
-stdio → streamable-HTTP bridge), which runs the OAuth sign-in in your browser.
-Requires `npx` on PATH. Prefer Codex's native remote client instead? Skip the
-plugin's server and add it directly — the skills work either way:
-
-```
-codex mcp add northlit --url https://northlit.ai/api/mcp
-codex mcp login northlit
-```
+The plugin declares Northlit's MCP server as a remote endpoint
+(`https://northlit.ai/api/mcp`); Codex and ChatGPT connect to it directly and run the OAuth
+sign-in in your browser — nothing to install, no `npx` needed. Already added
+the server yourself (`codex mcp add northlit --url https://northlit.ai/api/mcp`)? The two
+registrations coexist; the skills work either way.
 
 ## What the server exposes
 
