@@ -1,6 +1,6 @@
 {
   "name": "northlit",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "AI design studio: explore a brief as a board of direction mocks, build working HTML prototypes, generate video, publish — from Codex.",
   "author": {
     "name": "Northlit",
@@ -22,9 +22,22 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Northlit",
-    "shortDescription": "Design boards, prototypes, and video from your agent",
+    "shortDescription": "Design boards, prototypes, images, and video",
+    "longDescription": "Northlit is an AI design studio. Explore a brief as a board of divergent design direction mocks, build any direction into a working HTML prototype, iterate on it conversationally, generate images and video, and publish to a public URL — all on your own Northlit canvases, on-brand with your Brand DNA. Boards and images render inline; click any card to view it full size.",
     "developerName": "Northlit",
     "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "brandColor": "#F5501E",
+    "logo": "./assets/northlit-logo.png",
+    "composerIcon": "./assets/northlit-icon.png",
+    "defaultPrompt": [
+      "Explore design directions for this brief.",
+      "Create a working prototype from this direction.",
+      "Generate an image for this concept."
+    ],
     "websiteURL": "https://northlit.ai",
     "privacyPolicyURL": "https://northlit.ai/privacy"
   }

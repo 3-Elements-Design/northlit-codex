@@ -6,7 +6,33 @@ working HTML prototype, iterate conversationally, generate video, and publish to
 a public URL. Everything lands in your Northlit workspace, on real canvases you
 can open, edit, and share.
 
-## Install
+## Install in ChatGPT
+
+Northlit runs inside ChatGPT as a plugin — the same skills and MCP server as
+Codex, with an inline gallery for boards and images.
+
+1. In ChatGPT, open **Plugins** in the sidebar and search for **Northlit**.
+   Click **+** to install (or **Try now** on its page).
+2. Not listed for your workspace yet? Two routes:
+   - **Team/Enterprise:** a workspace admin imports this repository as a
+     plugin marketplace (`3-Elements-Design/northlit-codex`) under Codex plugin
+     management — ChatGPT then syncs it and Northlit appears in Plugins for
+     everyone.
+   - **Just you:** **Plugins → + New Plugin** and add Northlit's MCP server
+     directly by URL — `https://northlit.ai/api/mcp`. Same tools and gallery; only the
+     starter prompts on the plugin page come from the marketplace listing.
+3. Sign in when the Northlit consent opens. Your account's models and
+   credits apply; disconnect anytime by revoking the connection's access key
+   in [Settings → API](https://northlit.ai/settings/api).
+4. Start from the plugin page's starter prompts, or just ask: *"Explore design
+   directions for a fintech landing page."* Boards render inline; click any
+   card to view it full size.
+
+Seeing an older version on the plugin page? Remove Northlit and install it
+again — the version shown comes from the marketplace copy ChatGPT synced,
+and a reinstall picks up this repo's current `plugin.json`.
+
+## Install in Codex
 
 ```
 codex plugin marketplace add 3-Elements-Design/northlit-codex
@@ -15,7 +41,9 @@ codex plugin marketplace add 3-Elements-Design/northlit-codex
 Then open `/plugins` inside Codex and install **Northlit**. Sign in when the
 OAuth consent opens — your Northlit account's models and credits apply, and you
 can disconnect anytime by revoking the connection's access key in
-[Settings → API](https://northlit.ai/settings/api).
+[Settings → API](https://northlit.ai/settings/api). Update later with
+`codex plugin marketplace upgrade northlit`. (Plugins aren't available in the
+IDE extension yet.)
 
 No account yet? [northlit.ai](https://northlit.ai) — every account starts with
 25 free credits.
@@ -75,7 +103,7 @@ and refusals carry an upgrade path instead of failing silently.
 - `add_directions` — **billable** — More TOP-LEVEL directions on an existing board (no parent card).
 - `generate_variations` — **billable** — Child variations OF a card — attached under it, its image as edit base.
 - `reparent_card` — Attach an orphan top-level card under another card (childless cards only).
-- `list_directions` — All directions in a run.
+- `list_directions` — Directions in a run with their mocks — renders as an inline gallery in ChatGPT.
 - `read_direction` — One direction's full markdown.
 - `read_run` — A run's AGENTS.md — the entry point before other reads.
 - `read_moodboard` — A run's moodboard as markdown.
