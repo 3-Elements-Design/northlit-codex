@@ -90,7 +90,7 @@ registrations coexist; the skills work either way.
 
 ## What the server exposes
 
-63 tools, all acting as the signed-in user. Tools marked billable
+65 tools, all acting as the signed-in user. Tools marked billable
 spend the account's credits — the agent is told the balance up front (`whoami`)
 and refusals carry an upgrade path instead of failing silently.
 
@@ -139,6 +139,7 @@ and refusals carry an upgrade path instead of failing silently.
 - `read_chat` — The chat timeline for one direction.
 - `publish_prototype` — Deploy a prototype to its public share URL.
 - `unpublish_prototype` — Take a published prototype offline.
+- `import_prototype` — Bring existing built HTML files in as a prototype canvas (index.html + assets) — the Upload flow as a tool.
 - `get_build_link` — Tokenized handoff URL any coding agent can fetch.
 - `generate_prototype_image` — **billable** — Generate a hosted raster image INTO an existing prototype.
 - `crop_mock_region` — Crop a region out of a direction's source mock (hosted URL).
@@ -149,6 +150,7 @@ and refusals carry an upgrade path instead of failing silently.
 - `list_models` — Model catalog — image (flat 1 credit) + priced video models; ids feed generate_image / generate_video.
 - `generate_image` — **billable** — ONE image from a prompt — lands on its own editable canvas; optional model pick.
 - `upload_reference_image` — Rehost a local image (data URL) to a usable https reference URL.
+- `import_image` — Bring an EXISTING image (https or data URL) onto its own canvas — the import path; boards hold generated cards only.
 - `view_image` — Render any Northlit-hosted image inline in the chat.
 - `present_images` — Inline gallery widget of finished images — the display path for ChatGPT.
 - `image_to_prompt` — **billable** — Reverse-prompt an image for ui/image/video scopes.
