@@ -1,7 +1,7 @@
 {
   "name": "northlit",
-  "version": "0.1.18",
-  "description": "AI design suite: the best image and video models, your brand context, and your marketing intelligence in one place — on-brand images, video and prototypes, with real editing tools — from Codex.",
+  "version": "0.1.19",
+  "description": "An AI Creative Director for your team: explore many directions at once, every one on brand through the Brand Graph, then build, edit and ship images, video and prototypes — from Codex.",
   "author": {
     "name": "Northlit",
     "email": "northlit_support@hangarx.ai",
@@ -22,8 +22,8 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Northlit",
-    "shortDescription": "On-brand images, video & prototypes on the best models",
-    "longDescription": "Northlit is the AI design suite: the best image and video models (GPT Image 2.5, Gemini, FLUX.2, Seedance, Kling, Veo), your brand context, and your marketing intelligence orchestrated in one platform. Explore a brief as a board of divergent direction mocks, generate on-brand images and video, build any direction into a working HTML prototype and publish it — then edit the results with real tools: Studio layers, erase and retext, 4K upscales, a video timeline with captions, voiceover and music. Everything generates under your Brand DNA and lands on your own Northlit canvases. Boards and images render inline; click any card to view it full size.",
+    "shortDescription": "An AI Creative Director that keeps every idea on brand",
+    "longDescription": "Northlit gives every creative an AI Creative Director. Hand it a brief and it explores a board of genuinely divergent directions — every one on brand, because the Brand Graph underneath carries your palette, type, voice, exact logo and guidelines through master brands, sub-brands and product lines. Pick a direction and it keeps going: variations, a working HTML prototype you refine in plain language, a creative-director critique with the fix ready to apply, publish to a public URL. It runs on the best image and video models (GPT Image 2.5, Gemini, FLUX.2, Seedance, Kling, Veo) inside a full suite: Studio layer editing, 4K upscales, a video timeline with captions, voiceover and music, brand books and design systems from the same DNA. Everything lands on your own Northlit canvases. Boards and images render inline; click any card to view it full size.",
     "developerName": "Northlit",
     "category": "Productivity",
     "capabilities": [
