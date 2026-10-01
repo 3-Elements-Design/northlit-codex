@@ -1,10 +1,10 @@
 {
   "name": "northlit",
-  "version": "0.1.15",
+  "version": "0.1.17",
   "description": "AI design studio: explore a brief as a board of direction mocks, build working HTML prototypes, generate video, publish — from Codex.",
   "author": {
     "name": "Northlit",
-    "email": "support@northlit.ai",
+    "email": "northlit_support@hangarx.ai",
     "url": "https://northlit.ai"
   },
   "homepage": "https://northlit.ai",
