@@ -1,6 +1,6 @@
 {
   "name": "northlit",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "An AI Creative Director for your team: explore many directions at once, every one on brand through the Brand Graph, then build, edit and ship images, video and prototypes — from Codex.",
   "author": {
     "name": "Northlit",
@@ -39,6 +39,8 @@
       "Generate an image for this concept."
     ],
     "websiteURL": "https://northlit.ai",
-    "privacyPolicyURL": "https://northlit.ai/privacy"
+    "privacyPolicyURL": "https://northlit.ai/privacy",
+    "termsOfServiceURL": "https://northlit.ai/terms",
+    "supportURL": "https://northlit.ai/privacy#contact"
   }
 }
