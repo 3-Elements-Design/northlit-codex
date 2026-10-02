@@ -1,9 +1,9 @@
 {
   "name": "northlit",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "description": "An AI Creative Director for your team: explore many directions at once, every one on brand through the Brand Graph, then build, edit and ship images, video and prototypes — from Codex.",
   "author": {
-    "name": "Northlit",
+    "name": "HangarX Labs LLC",
     "email": "northlit_support@hangarx.ai",
     "url": "https://northlit.ai"
   },
@@ -22,10 +22,10 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Northlit",
-    "shortDescription": "An AI Creative Director that keeps every idea on brand",
-    "longDescription": "Northlit gives every creative an AI Creative Director. Hand it a brief and it explores a board of genuinely divergent directions — every one on brand, because the Brand Graph underneath carries your palette, type, voice, exact logo and guidelines through master brands, sub-brands and product lines. Pick a direction and it keeps going: variations, a working HTML prototype you refine in plain language, a creative-director critique with the fix ready to apply, publish to a public URL. It runs on the best image and video models (GPT Image 2.5, Gemini, FLUX.2, Seedance, Kling, Veo) inside a full suite: Studio layer editing, 4K upscales, a video timeline with captions, voiceover and music, brand books and design systems from the same DNA. Everything lands on your own Northlit canvases. Boards and images render inline; click any card to view it full size.",
-    "developerName": "Northlit",
-    "category": "Productivity",
+    "shortDescription": "AI design suite for your brand",
+    "longDescription": "Northlit is an AI design suite for designers, builders, creative teams, and agencies. It gives you an AI Creative Director and a suite of tools to create and edit images, videos, and prototypes while staying true to your brand.\n\nDescribe a brief and the Creative Director explores a board of distinct design directions. Pick one and keep going: variations, a working HTML prototype you refine in plain language, a creative-director critique with the fix ready to apply, and publishing to a public URL. Generate and edit images and video with the leading image and video models, cut out, recolor, and upscale in Studio, and assemble clips with captions, voiceover, and music.\n\nEvery result is on brand because the Brand Graph underneath carries your palette, typography, voice, logos, and guidelines through master brands, sub-brands, and product lines. Extract a brand from a website, build brand books and design systems from the same DNA, and produce on-brand ads and product imagery.\n\nEverything you make is saved to your Northlit canvases, where you can keep working in the browser. Boards and images render inline in the conversation.\n\nIntended for designers, marketers, founders, and agencies producing brand-consistent creative. Requires a Northlit account; you sign in with OAuth when prompted, and generation uses your account's Northlit credits. The plugin does not initiate purchases. Image, video, and prototype generation takes from seconds to several minutes, and generated work should be reviewed before it is published.",
+    "developerName": "HangarX Labs LLC",
+    "category": "Creativity",
     "capabilities": [
       "Interactive",
       "Write"
@@ -42,5 +42,71 @@
     "privacyPolicyURL": "https://northlit.ai/privacy",
     "termsOfServiceURL": "https://northlit.ai/terms",
     "supportURL": "https://northlit.ai/privacy#contact"
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Account read: the plugin reports plan and credits from whoami without starting any generation.",
+              "prompt": "Who am I in Northlit and what can I spend?",
+              "tools_triggered": "whoami",
+              "expected_behavior": "Reports the returned email, plan, remaining credits and current project; no tool that costs credits is called."
+            },
+            {
+              "description": "Exploration: a brief becomes a board of five on-brand directions on the reviewer's project brand.",
+              "prompt": "Explore 5 directions for a landing page for a coffee subscription.",
+              "tools_triggered": "create_exploration, check_progress, list_directions",
+              "expected_behavior": "Starts one exploration, polls progress until the mocks are ready (a few minutes), lists the five directions and shows the board inline with its openUrl."
+            },
+            {
+              "description": "Variations: iterating on a card from the board, under the same brand.",
+              "prompt": "Make the second direction warmer.",
+              "tools_triggered": "generate_variations, check_progress",
+              "expected_behavior": "Creates child cards under the chosen direction within about two minutes and shows them; does not start a new exploration."
+            },
+            {
+              "description": "Critique: a creative-director review of an existing direction, read-only.",
+              "prompt": "Critique the second direction like a creative director.",
+              "tools_triggered": "critique_design",
+              "expected_behavior": "Returns scores, ranked issues and a ready-to-apply fix prompt; nothing is generated until the user asks to apply it."
+            },
+            {
+              "description": "Single image: a product shot on its own canvas, shown inline.",
+              "prompt": "Generate a square product shot of a coffee bag on marble in my current project.",
+              "tools_triggered": "generate_image, present_images",
+              "expected_behavior": "Calls generate_image with the brief and a square aspect, saves it to the current project and displays the real image; if credits are denied it reports the returned error without claiming success."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Publishing with nothing built: the tool error is explained, no fabricated URL.",
+              "prompt": "Publish the prototype.",
+              "tools_triggered": "publish_prototype",
+              "expected_behavior": "publish_prototype returns an error because no direction has been built; the plugin explains that a direction must be built first and offers build_prototype."
+            },
+            {
+              "description": "Out of scope: Northlit has no payments, email or booking tools.",
+              "prompt": "Transfer $100 from my bank account to a friend through Northlit.",
+              "tools_triggered": "none",
+              "expected_behavior": "Explains that Northlit only creates and edits design work; calls no Northlit tool and does not claim completion."
+            },
+            {
+              "description": "External image URL: references must come from Northlit or be uploaded.",
+              "prompt": "Add https://example.com/photo.jpg to my board as a reference.",
+              "tools_triggered": "add_reference",
+              "expected_behavior": "add_reference refuses the non-Northlit URL; the plugin offers upload_reference_image or import_image instead of inventing a result."
+            }
+          ]
+        },
+        "commerce": true,
+        "commerce_description": "Northlit is a paid service. Every new account receives welcome credits with no card required; continuing requires a subscription plan or a credit pack, purchased on the Northlit website through Stripe. The plugin spends the user's existing credits and never initiates a purchase; when credits run out a tool returns an error that points the user to Northlit's billing page.",
+        "demo_recording_url": "https://drive.google.com/file/d/1Kv5WIuhG_m5CtC2yKErXpsSORLsqZbdR/view?usp=drive_link"
+      },
+      "publication": {
+        "release_notes": "Initial public submission: Northlit's six creative workflow skills and its remote MCP server (OAuth)."
+      }
+    }
   }
 }
