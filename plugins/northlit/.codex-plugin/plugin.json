@@ -1,7 +1,7 @@
 {
   "name": "northlit",
-  "version": "0.1.21",
-  "description": "An AI Creative Director for your team: explore many directions at once, every one on brand through the Brand Graph, then build, edit and ship images, video and prototypes — from Codex.",
+  "version": "0.1.22",
+  "description": "An AI Creative Director for your team: explore several directions at once, each guided by your Brand Graph, then build, edit and publish images, video and prototypes — from Codex.",
   "author": {
     "name": "HangarX Labs LLC",
     "email": "northlit_support@hangarx.ai",
@@ -23,7 +23,7 @@
   "interface": {
     "displayName": "Northlit",
     "shortDescription": "AI design suite for your brand",
-    "longDescription": "Northlit is an AI design suite for designers, builders, creative teams, and agencies. It gives you an AI Creative Director and a suite of tools to create and edit images, videos, and prototypes while staying true to your brand.\n\nDescribe a brief and the Creative Director explores a board of distinct design directions. Pick one and keep going: variations, a working HTML prototype you refine in plain language, a creative-director critique with the fix ready to apply, and publishing to a public URL. Generate and edit images and video with the leading image and video models, cut out, recolor, and upscale in Studio, and assemble clips with captions, voiceover, and music.\n\nEvery result is on brand because the Brand Graph underneath carries your palette, typography, voice, logos, and guidelines through master brands, sub-brands, and product lines. Extract a brand from a website, build brand books and design systems from the same DNA, and produce on-brand ads and product imagery.\n\nEverything you make is saved to your Northlit canvases, where you can keep working in the browser. Boards and images render inline in the conversation.\n\nIntended for designers, marketers, founders, and agencies producing brand-consistent creative. Requires a Northlit account; you sign in with OAuth when prompted, and generation uses your account's Northlit credits. The plugin does not initiate purchases. Image, video, and prototype generation takes from seconds to several minutes, and generated work should be reviewed before it is published.",
+    "longDescription": "Northlit is an AI design suite for designers, builders, creative teams, and agencies. It gives you an AI Creative Director and tools to create and edit images, videos, and prototypes, with your brand's palette, typography, voice, and logos carried into each request.\n\nDescribe a brief and the Creative Director explores a board of distinct design directions. Pick one and keep going: variations, an HTML prototype you refine in plain language, a creative-director critique with a suggested fix you can apply, and publishing to a public URL. Generate and edit images, upscale them, and generate video clips you can assemble on a timeline with captions, voiceover, and music, using a range of image and video models.\n\nThe Brand Graph underneath holds your palette, typography, voice, logos, and guidelines across master brands, sub-brands, and product lines, and the tools draw on it when they generate. Extract a brand from a website, build brand books and design systems from the same brand DNA, and generate product imagery from your own product photos.\n\nWhat you make is saved to your Northlit canvases, where you can keep working in the browser. Boards and images render inline in the conversation.\n\nIntended for designers, marketers, founders, and agencies producing brand-consistent creative. Requires a Northlit account; you sign in with OAuth when prompted, and generation uses your account's Northlit credits. The plugin does not initiate purchases. Image, video, and prototype generation can take from seconds to several minutes, output quality depends on the brief and the brand data available, and generated work should be reviewed before it is published.",
     "developerName": "HangarX Labs LLC",
     "category": "Creativity",
     "capabilities": [
@@ -58,13 +58,13 @@
               "description": "Exploration: a brief becomes a board of five on-brand directions on the reviewer's project brand.",
               "prompt": "Explore 5 directions for a landing page for a coffee subscription.",
               "tools_triggered": "create_exploration, check_progress, list_directions",
-              "expected_behavior": "Starts one exploration, polls progress until the mocks are ready (a few minutes), lists the five directions and shows the board inline with its openUrl."
+              "expected_behavior": "Starts one exploration, polls progress until the mocks are ready, lists the five directions and shows the board inline with its openUrl."
             },
             {
               "description": "Variations: iterating on a card from the board, under the same brand.",
               "prompt": "Make the second direction warmer.",
               "tools_triggered": "generate_variations, check_progress",
-              "expected_behavior": "Creates child cards under the chosen direction within about two minutes and shows them; does not start a new exploration."
+              "expected_behavior": "Creates child cards under the chosen direction once generation completes and shows them; does not start a new exploration."
             },
             {
               "description": "Critique: a creative-director review of an existing direction, read-only.",
